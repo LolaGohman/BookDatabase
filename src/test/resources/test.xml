@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed>
+    <entry>
+        <id>http://test.online/b/111/opds</id>
+        <title>Test book</title>
+        <link href="http://fb17.online/b/718815/opds" type="application/atom+xml;profile=opds-catalog;kind=acquisition" />
+        <updated>2021-05-30T15:44:39Z</updated>
+        <summary>﻿Test book summary</summary>
+        <link type="image/jpeg" href="http://lib.rus.ec/cover/718815" rel="http://opds-spec.org/image" />
+        <link type="image/jpeg" href="http://lib.rus.ec/cover/718815t" rel="http://opds-spec.org/image/thumbnail" />
+        <link type="application/pdf+zip" href="http://fb17.online/b/718815/download" rel="http://opds-spec.org/acquisition" />
+    </entry>
+    <entry>
+        <id>http://test2.online/b/111/opds</id>
+        <title>Здоровье без таблеток</title>
+        <link href="http://host/b/718814/opds" type="application/atom+xml;profile=opds-catalog;kind=acquisition" />
+        <summary>﻿Test2 book summary></summary>
+        <link type="image/jpeg" href="http://host/cover/718814" rel="http://host/image" />
+        <link type="image/jpeg" href="http://host/cover/718814t" rel="http://host/image/thumbnail" />
+        <link type="application/pdf+zip" href="http://host/b/718814/download" rel="http://host/acquisition" />
+    </entry>
+</feed>
