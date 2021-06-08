@@ -10,7 +10,7 @@
         <h2 th:utext="${book.title}"></h2>
         <h3 th:utext="${book.author}"></h3>
         <p th:utext="${book.summary}"></p>
-        <th:block th:each="link : ${book.imageLinks}">
+        <th:block th:each="link : ${book.links}">
             <div th:switch="${link.contentType.name()}">
                 <p th:case="'IMG_PNG'"><img th:src="${link.url}" alt="Flowers in Chania" width="450" height="450"></p>
                 <p th:case="'IMG_JPEG'"><img th:src="${link.url}" alt="Flowers in Chania" width="450" height="450"></p>
@@ -18,9 +18,7 @@
             </div>
         </th:block>
 
-        <th:block th:each="link : ${book.downloadLinks}">
-            <a th:href="${link.url}">download</a></p>
-        </th:block>
+
         <br>
     </th:block>
 </ul>

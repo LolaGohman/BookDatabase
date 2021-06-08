@@ -10,12 +10,6 @@ import java.util.function.Consumer;
 import static org.apache.commons.lang3.StringUtils.isEmpty;
 
 public enum BookElement implements TagElement<Book> {
-    ID("id") {
-        @Override
-        public void setElement(Book book, Node idNode) {
-            setNodeValue(idNode, book::setId);
-        }
-    },
     TITLE("title") {
         @Override
         public void setElement(Book book, Node titleNode) {

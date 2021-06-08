@@ -1,5 +1,7 @@
 package book.database.application.parser;
 
+import book.database.application.link.Link;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;

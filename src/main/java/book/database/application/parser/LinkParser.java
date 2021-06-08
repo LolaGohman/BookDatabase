@@ -1,6 +1,7 @@
 package book.database.application.parser;
 
 import book.database.application.exception.DocumentLoadException;
+import book.database.application.link.Link;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -72,8 +73,8 @@ public class LinkParser {
         if (!isNullOrEmpty(bookLinks)) {
             final Book book = parseBook(entry);
             final Set<Link> imageLinks = links.stream().filter(link -> link.getContentType().isImage()).collect(toSet());
-            book.setDownloadLinks(bookLinks);
-            book.setImageLinks(imageLinks);
+            book.getLinks().addAll(bookLinks);
+            book.getLinks().addAll(imageLinks);
             parsedInfo.getBooks().add(book);
         } else {
             final Set<Link> innerLinks = links.stream().filter(link -> link.getContentType().isInnerLink()).collect(toSet());

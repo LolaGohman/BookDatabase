@@ -1,70 +1,64 @@
 package book.database.application.parser;
 
+import book.database.application.link.Link;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.MappedCollection;
+
 import java.util.HashSet;
 import java.util.Set;
 
 public class Book {
-    private String id;
+    @Id
+    private Long bookId;
     private String title;
     private String summary;
     private String author;
     private String category;
-    private final Set<Link> imageLinks = new HashSet<>();
-    private final Set<Link> downloadLinks = new HashSet<>();
+    @MappedCollection(idColumn = "book_id")
+    private Set<Link> links = new HashSet<>();
 
-    public String getId() {
-        return id;
+    public Long getId() {
+        return bookId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId(Long id) {
+        this.bookId = id;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public String getAuthor() {
-        return author;
-    }
-
-    public String getCategory() {
-        return category;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getSummary() {
         return summary;
     }
 
-    public void setDownloadLinks(Set<Link> downloadLinks) {
-        this.downloadLinks.addAll(downloadLinks);
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
-    public Set<Link> getDownloadLinks() {
-        return downloadLinks;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
+    public String getAuthor() {
+        return author;
     }
 
     public void setAuthor(String author) {
         this.author = author;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
     public void setCategory(String category) {
         this.category = category;
     }
 
-    public void setSummary(String summary) {
-        this.summary = summary;
-    }
-
-    public void setImageLinks(Set<Link> imageLinks) {
-        this.imageLinks.addAll(imageLinks);
-    }
-
-    public Set<Link> getImageLinks() {
-        return imageLinks;
+    public Set<Link> getLinks() {
+        return links;
     }
 }
