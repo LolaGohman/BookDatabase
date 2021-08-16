@@ -4,5 +4,6 @@ CREATE TABLE book
     title    VARCHAR NOT NULL,
     author   VARCHAR NOT NULL,
     summary  VARCHAR,
-    category VARCHAR
+    category VARCHAR,
+    tsv      TSVECTOR
 );

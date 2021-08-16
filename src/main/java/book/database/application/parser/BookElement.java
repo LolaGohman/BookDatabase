@@ -22,6 +22,12 @@ public enum BookElement implements TagElement<Book> {
            setNodeValue(summaryNode, book::setSummary);
         }
     },
+    CONTENT("content") {
+        @Override
+        public void setElement(Book book, Node contentNode) {
+            setNodeValue(contentNode, book::setSummary);
+        }
+    },
     AUTHOR("author") {
         private static final String AUTHOR_NODE_NAME = "name";
 
